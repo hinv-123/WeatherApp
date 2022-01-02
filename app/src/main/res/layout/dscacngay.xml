@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#8005091C"
+    app:cardCornerRadius="16dp"
+    android:layout_marginLeft="8dp">
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="daily"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+
+        <ImageView
+            android:id="@+id/dailyimg"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/daily"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_launcher_background" />
+        <TextView
+            android:id="@+id/dailymax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dailyimg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="temp"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/dailymin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dailymax"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:text="temp"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/dailywind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dailymin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="wind"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

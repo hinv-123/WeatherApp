@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Timkiem">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Quản lí thành phố"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/nhapCity"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:cursorVisible="false"
+            android:hint="Nhap vi tri:"
+            android:textColorHint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"
+            android:background="#000D011E"
+            android:src="@drawable/ic_baseline_search_24" />
+    </RelativeLayout>
+        <ListView
+            android:layout_marginTop="20dp"
+            android:id="@+id/dsthanhpho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>

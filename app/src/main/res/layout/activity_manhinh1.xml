@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Manhinh1"
+    android:padding="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:text="Thanhpho"
+                            android:textColor="@color/white"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:text="Datnuoc"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/country"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="200sp"
+                            android:text="20"
+                            android:textColor="@color/white"
+                            android:textSize="120sp" />
+
+                        <ImageView
+                            android:id="@+id/icon"
+                            android:layout_width="60sp"
+                            android:layout_height="60sp"
+                            android:layout_below="@+id/temp"
+                            android:layout_centerHorizontal="true" />
+
+                        <TextView
+                            android:id="@+id/description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/icon"
+                            android:layout_centerHorizontal="true"
+                            android:text="Trang thai"
+                            android:textColor="@color/white"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/description"
+                            android:layout_marginTop="80sp"
+                            android:text="HOURS"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/dscacgio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text1"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dscacgio"
+                            android:layout_marginTop="24sp"
+                            android:text="DETAILS"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/layout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text2"
+                            android:layout_marginTop="8dp"
+                            app:cardBackgroundColor="#3C080112"
+                            app:cardCornerRadius="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:weightSum="3">
+
+                                        <LinearLayout
+                                            android:padding="8dp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                                <LinearLayout
+
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+                                                            android:src="@drawable/sunrise"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Bình minh"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/sunrise"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="6:00"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="24sp"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+
+                                                            android:src="@drawable/thermometer"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Cảm giác"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/feellike"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="20"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="24sp"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+                                                            android:src="@drawable/wind"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Tốc độ "
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/wind"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="30"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:padding="8dp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                                <LinearLayout
+
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+
+                                                            android:src="@drawable/sunset"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Hoàng hôn"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/sunset"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="6:00"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="24sp"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+
+                                                            android:src="@drawable/humidity"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Độ ẩm"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/humidity"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="20"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="24sp"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+                                                            android:src="@drawable/visibility"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Tầm nhìn"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/visibility"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="30"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:padding="8dp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+                                                            android:src="@drawable/rays"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="match_parent"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="UV"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/uv"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="20"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="24sp"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+                                                            android:src="@drawable/cloud"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Có mây"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/cloud"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="20"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="24sp"
+                                                    android:orientation="horizontal">
+
+                                                        <ImageView
+                                                            android:layout_width="24sp"
+                                                            android:layout_height="24sp"
+                                                            android:src="@drawable/gauge"
+                                                            app:tint="@color/white" />
+
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="4dp"
+                                                            android:text="Áp suất"
+                                                            android:textColor="@color/white"
+                                                            android:textSize="16sp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:id="@+id/pressure"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="30"
+                                                    android:textColor="@color/white"
+                                                    android:textSize="24sp" />
+                                        </LinearLayout>
+                                </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/layout1"
+                            android:layout_marginTop="24sp"
+                            android:text="DAILY"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/dscacngay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text3"
+                            android:layout_marginTop="8sp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        <TextView
+                            android:id="@+id/text4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dscacngay"
+                            android:layout_marginTop="24sp"
+                            android:text="AQI"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/layout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text4"
+                            android:layout_marginTop="8dp"
+                            app:cardBackgroundColor="#3C080112"
+                            app:cardCornerRadius="8dp">
+
+                                <RelativeLayout
+                                    android:padding="8dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/text5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8sp"
+                                            android:text="Chỉ số chất lượng kk"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp" />
+
+                                        <TextView
+                                            android:id="@+id/aqi"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginRight="8dp"
+                                            android:text="20"
+                                            android:textColor="@color/white"
+                                            android:textSize="24sp" />
+                                        <TextView
+                                            android:id="@+id/text6"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/aqi"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginLeft="20dp"
+                                            android:text="CO : "
+                                            android:textSize="16sp"
+                                            android:textColor="@color/white"/>
+                                        <TextView
+                                            android:id="@+id/co"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="20"
+                                            android:layout_toRightOf="@+id/text6"
+                                            android:layout_alignTop="@+id/text6"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp"/>
+                                        <TextView
+                                            android:id="@+id/text7"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="O3 : "
+                                            android:layout_toRightOf="@+id/co"
+                                            android:layout_alignTop="@+id/text6"
+                                            android:layout_marginLeft="150dp"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp"/>
+                                        <TextView
+                                            android:id="@+id/o3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="20"
+                                            android:layout_toRightOf="@+id/text7"
+                                            android:layout_alignTop="@+id/text6"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp"/>
+
+                                        <TextView
+                                            android:id="@+id/text8"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/text6"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginLeft="20dp"
+                                            android:text="SO2 : "
+                                            android:textSize="16sp"
+                                            android:textColor="@color/white"/>
+                                        <TextView
+                                            android:id="@+id/so2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="20"
+                                            android:layout_toRightOf="@+id/text8"
+                                            android:layout_alignTop="@+id/text8"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp"/>
+                                        <TextView
+                                            android:id="@+id/text9"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="NO2 : "
+                                            android:layout_toRightOf="@+id/so2"
+                                            android:layout_alignTop="@+id/text8"
+                                            android:layout_alignLeft="@+id/text7"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp"/>
+                                        <TextView
+                                            android:id="@+id/no2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="20"
+                                            android:layout_toRightOf="@+id/text9"
+                                            android:layout_alignTop="@+id/text8"
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp"/>
+                                </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+        </ScrollView>
+</RelativeLayout>
