@@ -3,6 +3,7 @@ package com.example.thitit;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.android.volley.Request;
@@ -20,8 +21,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Manhinh1 extends AppCompatActivity {
-    TextView city, country,temp,description,sunrise,sunset,uv,feellike,humidity,cloud,wind,visibility,pressure,aqi,co,o3,so2,no2;
-    ImageView imgicon;
+    TextView city, country,currenttime,temp,description,sunrise,sunset,uv,feellike,humidity,cloud,wind,visibility,pressure,aqi,co,o3,so2,no2;
+    ImageView imgicon,goback;
     RecyclerView dshours, dsdaily;
     AdapterHour adapterHour;
     AdapterDaily adapterDaily;
@@ -37,6 +38,12 @@ public class Manhinh1 extends AppCompatActivity {
         GetHoursData(name);
         GetDailysData(name);
         GetAQIData(name);
+        goback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
     public void GetDataCurrent(String data) {
         String url ="https://api.weatherbit.io/v2.0/current?&city="+data+"&key=9beb0a4cb1d1467f96a241ba4d0750a8";
@@ -56,6 +63,13 @@ public class Manhinh1 extends AppCompatActivity {
 
                             String country_code = jsonObjectData.getString("country_code");
                             country.setText(country_code);
+
+                            String ts = jsonObjectData.getString("ts");
+                            long l = Long.valueOf(ts);
+                            Date date = new Date(l * 1000L);
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                            String Ts = simpleDateFormat.format(date);
+                            currenttime.setText(Ts);
 
                             String TEMP = jsonObjectData.getString("temp");
                             Double a = Double.valueOf(TEMP);
@@ -124,7 +138,11 @@ public class Manhinh1 extends AppCompatActivity {
                             for(int i = 0; i<jsonArrayData.length() ; i++) {
                                 JSONObject jsonObjectData = jsonArrayData.getJSONObject(i);
 
-                                String timestamp_local = jsonObjectData.getString("timestamp_local");
+                                String ts = jsonObjectData.getString("ts");
+                                long l = Long.valueOf(ts);
+                                Date date = new Date(l * 1000L);
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                                String Ts = simpleDateFormat.format(date);
 
                                 String TEMP = jsonObjectData.getString("temp");
                                 Double a = Double.valueOf(TEMP);
@@ -133,7 +151,7 @@ public class Manhinh1 extends AppCompatActivity {
                                 String wind_spd = jsonObjectData.getString("wind_spd");
                                 JSONObject jsonObjectWeather = jsonObjectData.getJSONObject("weather");
                                 String icon = jsonObjectWeather.getString("icon");
-                                dubaotheogioList.add(new Dubaotheogio(timestamp_local,Temp,icon,wind_spd));
+                                dubaotheogioList.add(new Dubaotheogio(Ts,Temp,icon,wind_spd));
                             }
                             adapterHour.notifyDataSetChanged();
                         } catch (Exception e) {
@@ -160,9 +178,9 @@ public class Manhinh1 extends AppCompatActivity {
                             for(int i = 0; i<jsonArrayData.length() ; i++) {
                                 JSONObject jsonObjectData = jsonArrayData.getJSONObject(i);
                                 String ts = jsonObjectData.getString("ts");
-                                long l = Long.valueOf(ts);
+                                 long l = Long.valueOf(ts);
                                 Date date = new Date(l * 1000L);
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd");
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM");
                                 String Dt = simpleDateFormat.format(date);
 
                                 String max_temp = jsonObjectData.getString("max_temp");
@@ -243,8 +261,10 @@ public class Manhinh1 extends AppCompatActivity {
     }
 
     private void run() {
+        goback = (ImageView) findViewById(R.id.goback);
         city = (TextView) findViewById(R.id.city);
         country = (TextView) findViewById(R.id.country);
+        currenttime = (TextView) findViewById(R.id.currenttime);
         temp = (TextView) findViewById(R.id.temp);
         description = (TextView) findViewById(R.id.description);
         sunrise = (TextView) findViewById(R.id.sunrise);

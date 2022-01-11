@@ -17,10 +17,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                        <ImageView
+                            android:id="@+id/goback"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_arrow_back_24" />
+
                         <TextView
                             android:id="@+id/city"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/goback"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             android:text="Thanhpho"
@@ -38,12 +45,22 @@
                             android:textSize="16sp" />
 
                         <TextView
+                            android:id="@+id/currenttime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/country"
+                            android:layout_centerHorizontal="true"
+                            android:text="Ngaygio"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
                             android:id="@+id/temp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/country"
+                            android:layout_below="@id/currenttime"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="200sp"
+                            android:layout_marginTop="140sp"
                             android:text="20"
                             android:textColor="@color/white"
                             android:textSize="120sp" />
@@ -70,7 +87,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/description"
-                            android:layout_marginTop="80sp"
+                            android:layout_marginTop="20sp"
                             android:text="HOURS"
                             android:textColor="@color/white"
                             android:textSize="16sp" />
@@ -109,11 +126,11 @@
                                     android:weightSum="3">
 
                                         <LinearLayout
-                                            android:padding="8dp"
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:orientation="vertical">
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
 
                                                 <LinearLayout
 
@@ -142,7 +159,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="6:00"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -172,7 +189,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="20"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -201,15 +218,15 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="30"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
                                         </LinearLayout>
 
                                         <LinearLayout
-                                            android:padding="8dp"
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:orientation="vertical">
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
 
                                                 <LinearLayout
 
@@ -239,7 +256,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="6:00"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -269,7 +286,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="20"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -298,16 +315,16 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="30"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                         </LinearLayout>
 
                                         <LinearLayout
-                                            android:padding="8dp"
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:orientation="vertical">
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -335,7 +352,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="20"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -364,7 +381,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="20"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
 
                                                 <LinearLayout
                                                     android:layout_width="match_parent"
@@ -393,7 +410,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:text="30"
                                                     android:textColor="@color/white"
-                                                    android:textSize="24sp" />
+                                                    android:textSize="20sp" />
                                         </LinearLayout>
                                 </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -437,9 +454,9 @@
                             app:cardCornerRadius="8dp">
 
                                 <RelativeLayout
-                                    android:padding="8dp"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp">
 
                                         <TextView
                                             android:id="@+id/text5"
@@ -459,83 +476,90 @@
                                             android:text="20"
                                             android:textColor="@color/white"
                                             android:textSize="24sp" />
+
                                         <TextView
                                             android:id="@+id/text6"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/aqi"
-                                            android:layout_marginTop="16dp"
                                             android:layout_marginLeft="20dp"
+
                                             android:text="CO : "
-                                            android:textSize="16sp"
-                                            android:textColor="@color/white"/>
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp" />
+
                                         <TextView
                                             android:id="@+id/co"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="20"
-                                            android:layout_toRightOf="@+id/text6"
                                             android:layout_alignTop="@+id/text6"
+                                            android:layout_toRightOf="@+id/text6"
+                                            android:text="20"
                                             android:textColor="@color/white"
-                                            android:textSize="16sp"/>
+                                            android:textSize="16sp" />
+
                                         <TextView
                                             android:id="@+id/text7"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="O3 : "
-                                            android:layout_toRightOf="@+id/co"
                                             android:layout_alignTop="@+id/text6"
-                                            android:layout_marginLeft="150dp"
+                                            android:layout_marginLeft="80dp"
+                                            android:layout_toRightOf="@+id/co"
+                                            android:text="O3 : "
                                             android:textColor="@color/white"
-                                            android:textSize="16sp"/>
+                                            android:textSize="16sp" />
+
                                         <TextView
                                             android:id="@+id/o3"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="20"
-                                            android:layout_toRightOf="@+id/text7"
                                             android:layout_alignTop="@+id/text6"
+                                            android:layout_toRightOf="@+id/text7"
+                                            android:text="20"
                                             android:textColor="@color/white"
-                                            android:textSize="16sp"/>
+                                            android:textSize="16sp" />
 
                                         <TextView
                                             android:id="@+id/text8"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/text6"
-                                            android:layout_marginTop="16dp"
                                             android:layout_marginLeft="20dp"
+                                            android:layout_marginTop="16dp"
                                             android:text="SO2 : "
-                                            android:textSize="16sp"
-                                            android:textColor="@color/white"/>
+                                            android:textColor="@color/white"
+                                            android:textSize="16sp" />
+
                                         <TextView
                                             android:id="@+id/so2"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="20"
-                                            android:layout_toRightOf="@+id/text8"
                                             android:layout_alignTop="@+id/text8"
+                                            android:layout_toRightOf="@+id/text8"
+                                            android:text="20"
                                             android:textColor="@color/white"
-                                            android:textSize="16sp"/>
+                                            android:textSize="16sp" />
+
                                         <TextView
                                             android:id="@+id/text9"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="NO2 : "
-                                            android:layout_toRightOf="@+id/so2"
-                                            android:layout_alignTop="@+id/text8"
                                             android:layout_alignLeft="@+id/text7"
+                                            android:layout_alignTop="@+id/text8"
+                                            android:layout_toRightOf="@+id/so2"
+                                            android:text="NO2 : "
                                             android:textColor="@color/white"
-                                            android:textSize="16sp"/>
+                                            android:textSize="16sp" />
+
                                         <TextView
                                             android:id="@+id/no2"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="20"
-                                            android:layout_toRightOf="@+id/text9"
                                             android:layout_alignTop="@+id/text8"
+                                            android:layout_toRightOf="@+id/text9"
+                                            android:text="20"
                                             android:textColor="@color/white"
-                                            android:textSize="16sp"/>
+                                            android:textSize="16sp" />
                                 </RelativeLayout>
                         </androidx.cardview.widget.CardView>
                 </RelativeLayout>

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardBackgroundColor="#8005091C"
-    app:cardCornerRadius="16dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp">
+    android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bogoc">
 
             <TextView
                 android:id="@+id/currentcity"
@@ -40,5 +39,5 @@
                 android:textSize="36dp" />
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 

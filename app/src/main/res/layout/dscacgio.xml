@@ -4,7 +4,7 @@
     android:layout_width="80dp"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="#8005091C"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="16dp"
     android:layout_marginLeft="8dp">
 
     <RelativeLayout
@@ -26,10 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/hour"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="temp"
             android:textColor="@color/white"
-            android:textSize="24dp" />
+            android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/nextimg"
@@ -37,7 +37,7 @@
             android:layout_height="30dp"
             android:layout_below="@+id/nexttemp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -46,10 +46,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/nextimg"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="wind"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
     </RelativeLayout>
 
