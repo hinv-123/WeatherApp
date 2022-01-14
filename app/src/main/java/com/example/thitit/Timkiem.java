@@ -4,7 +4,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-
+import androidx.core.app.ActivityCompat;
+import android.Manifest;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
+import android.content.pm.PackageManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -45,6 +50,8 @@ public class Timkiem extends AppCompatActivity {
     AdapterCity adapterCity;
     ArrayList<Thanhpho> mangthanhpho;
     ArrayList<Thanhpho> mangtp;
+    LocationManager locationManager;
+    int PERMISSION_CODE = 1;
     private SQLiteDatabase db;
     boolean isLongClick = false;
     @Override
@@ -53,6 +60,12 @@ public class Timkiem extends AppCompatActivity {
         setContentView(R.layout.activity_timkiem);
         run();
         initData();
+        locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_CODE);
+        }
+
+        Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
