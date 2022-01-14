@@ -60,7 +60,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/currenttime"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="140sp"
+                            android:layout_marginTop="135sp"
                             android:text="20"
                             android:textColor="@color/white"
                             android:textSize="120sp" />
@@ -267,7 +267,6 @@
                                                         <ImageView
                                                             android:layout_width="24sp"
                                                             android:layout_height="24sp"
-
                                                             android:src="@drawable/humidity"
                                                             app:tint="@color/white" />
 
@@ -450,6 +449,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/text4"
                             android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
                             app:cardBackgroundColor="#3C080112"
                             app:cardCornerRadius="8dp">
 

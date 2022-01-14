@@ -29,8 +29,8 @@ public DailyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewTyp
 public void onBindViewHolder(@NonNull DailyViewHolder holder, int position) {
         Dubaotheongay dubao = list.get(position);
         holder.daily.setText(dubao.daily);
-        holder.dailymax.setText(dubao.dailymax + " ̊C");
-        holder.dailymin.setText(dubao.dailymin + " ̊C");
+        holder.dailymax.setText(dubao.dailymax + "  ̊C");
+        holder.dailymin.setText(dubao.dailymin + "  ̊C");
         holder.dailywind.setText(dubao.dailywind + " m/s");
         Picasso.get().load("https://www.weatherbit.io/static/img/icons/"+dubao.dailyimg+".png").into(holder.dailyimg);
         }

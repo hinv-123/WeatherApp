@@ -31,7 +31,7 @@ public class AdapterHour extends RecyclerView.Adapter<AdapterHour.HourViewHolder
     @Override
     public void onBindViewHolder(@NonNull HourViewHolder holder, int position) {
         Dubaotheogio dubao = list.get(position);
-        holder.nexttemp.setText(dubao.nexttemp + " ̊C");
+        holder.nexttemp.setText(dubao.nexttemp + "  ̊C");
         holder.nextwind.setText(dubao.nextwind + " m/s");
         Picasso.get().load("https://www.weatherbit.io/static/img/icons/"+dubao.nextimg+".png").into(holder.nextimg);
         holder.hour.setText(dubao.hour);

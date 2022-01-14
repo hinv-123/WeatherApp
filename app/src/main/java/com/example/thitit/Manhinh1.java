@@ -67,7 +67,7 @@ public class Manhinh1 extends AppCompatActivity {
                             String ts = jsonObjectData.getString("ts");
                             long l = Long.valueOf(ts);
                             Date date = new Date(l * 1000L);
-                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                             String Ts = simpleDateFormat.format(date);
                             currenttime.setText(Ts);
 
@@ -90,7 +90,7 @@ public class Manhinh1 extends AppCompatActivity {
                             String app_temp = jsonObjectData.getString("app_temp");
                             Double b = Double.valueOf(app_temp);
                             String App_temp = String.valueOf(b.intValue());
-                            feellike.setText(App_temp +" ̊C");
+                            feellike.setText(App_temp +"  ̊C");
 
                             String rh = jsonObjectData.getString("rh");
                             humidity.setText(rh + " %");

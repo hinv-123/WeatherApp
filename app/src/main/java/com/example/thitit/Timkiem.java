@@ -2,17 +2,22 @@ package com.example.thitit;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
-import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.location.Location;
-import android.location.LocationManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +35,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class Timkiem extends AppCompatActivity {
@@ -37,25 +43,16 @@ public class Timkiem extends AppCompatActivity {
     ImageButton search;
     ListView dsthanhpho;
     AdapterCity adapterCity;
-    LocationManager locationManager;
-    int PERMISSION_CODE = 1;
     ArrayList<Thanhpho> mangthanhpho;
     ArrayList<Thanhpho> mangtp;
     private SQLiteDatabase db;
     boolean isLongClick = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timkiem);
         run();
         initData();
-        locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_CODE);
-        }
-
-        Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +66,7 @@ public class Timkiem extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(isLongClick == false) {
                     goToDetail(position);
+                    sendNotification();
                 }
                 isLongClick = false;
             }
@@ -125,6 +123,33 @@ public class Timkiem extends AppCompatActivity {
         mangtp = new ArrayList<Thanhpho>();
         adapterCity = new AdapterCity(Timkiem.this,mangthanhpho);
         dsthanhpho.setAdapter(adapterCity);
+    }
+
+    private void sendNotification() {
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.app_icon);
+        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        Intent resultIntent = new Intent(this, Timkiem.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addNextIntentWithParentStack(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(getNotificationId(), PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Notification notification = new NotificationCompat.Builder(this, NotificationApplication.CHANNEL_ID)
+                .setContentTitle("Thời tiết ngày hôm nay")
+                .setContentText("Bấm để xem thông tin")
+                .setLargeIcon(bitmap)
+                .setSmallIcon(R.drawable.notifi_icon)
+                .setContentIntent(resultPendingIntent)
+                .setAutoCancel(true)
+                .setSound(uri)
+                .build();
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+        notificationManagerCompat.notify(getNotificationId(),notification);
+    }
+
+    private int getNotificationId() {
+        return (int) new Date().getTime();
     }
 
     private void initData() {
