@@ -44,10 +44,20 @@
             android:layout_marginRight="5dp"
             android:background="#000D011E"
             android:src="@drawable/ic_baseline_search_24" />
+
     </RelativeLayout>
-        <ListView
-            android:layout_marginTop="20dp"
-            android:id="@+id/dsthanhpho"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/danhsach"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <ListView
+        android:id="@+id/dsthanhpho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Thời tiết</string>
+    <string name="danhsach">Danh sách thành phố</string>
 </resources>
