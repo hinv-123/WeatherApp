@@ -46,14 +46,6 @@
             android:src="@drawable/ic_baseline_search_24" />
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/danhsach"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        />
-
     <ListView
         android:layout_marginTop="20dp"
         android:id="@+id/dsthanhpho"
